@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Afiches</title>
+
+  <!-- Carga de la fuente League Spartan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-header">
+    <div class="brand">
+      <span class="badge">AFICHES</span>
+      <h1>GENERADOR DE AFICHES</h1>
+    </div>
+    
+  </header>
+
+  <!-- Espacio de Trabajo -->
+  <main class="workspace">
+    
+    <!-- Panel Lateral -->
+    <aside class="sidebar">
+      <div class="panel-header">
+        <h2>Editor de Afiche</h2>
+      </div>
+
+      <div class="form-container">
+        <!-- Paso 1: Galería de Plantillas -->
+        <div class="step-block">
+          <div class="step-header">
+            <span class="step-indicator">Paso 1</span>
+            <h3>Elegí la plantilla</h3>
+          </div>
+          
+          <div id="templateGrid" class="template-grid">
+            <button class="template-card active" data-src="assets/plantilla1.png">
+              <img src="assets/plantilla1.png" alt="Plantilla 1">
+            </button>
+             <button class="template-card" data-src="assets/plantilla1v2.png">
+              <img src="assets/plantilla1v2.png" alt="Plantilla 2">
+            </button>
+            <button class="template-card" data-src="assets/plantilla2.png">
+              <img src="assets/plantilla2.png" alt="Plantilla 2">
+            </button>
+             <button class="template-card" data-src="assets/plantilla2v2.png">
+              <img src="assets/plantilla2v2.png" alt="Plantilla 2">
+            </button>
+            <button class="template-card" data-src="assets/plantilla3.png">
+              <img src="assets/plantilla3.png" alt="Plantilla 3">
+            </button>
+             <button class="template-card" data-src="assets/plantilla3v2.png">
+              <img src="assets/plantilla3v2.png" alt="Plantilla 2">
+            </button>
+          </div>
+        </div>
+
+        <!-- Paso 2: Texto Único -->
+        <div class="step-block">
+          <div class="step-header">
+            <span class="step-indicator">Paso 2</span>
+            <h3>Ingresá el texto</h3>
+          </div>
+          <div class="field-group">
+            <label for="inputTitle">
+              <span>Mensaje principal</span>
+              <small>Autodimensionable</small>
+            </label>
+            <textarea id="inputTitle" rows="4" placeholder="Ej: VIENE MYRIAM BREGMAN"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-footer">
+        <button id="downloadBtn" class="btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar PNG HD
+        </button>
+        <p id="statusMessage" class="status"></p>
+      </div>
+    </aside>
+
+    <!-- Mesa de Trabajo (Canvas) -->
+    <section class="canvas-stage">
+      <div class="stage-header">
+        <span class="stage-title">Vista Previa (1080 × 1920 px)</span>
+      </div>
+      
+      <div class="poster-wrapper">
+        <canvas id="posterCanvas" width="1080" height="1920"></canvas>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

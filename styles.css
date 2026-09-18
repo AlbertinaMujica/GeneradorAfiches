@@ -1,0 +1,327 @@
+:root {
+  /* Paleta */
+  --rojo: #C1121F;
+  --bordo: #8B0000;
+  --crema: #F5E6C8;
+  --negro: #1F1F1F;
+  --blanco: #FFFFFF;
+
+  /* Asignación de Interfaz */
+  --bg-app: #121214;
+  --bg-sidebar: var(--crema);
+  --text-main: var(--negro);
+  --border-color: var(--negro);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* BARRA SUPERIOR */
+.app-header {
+  background: linear-gradient(135deg, var(--bordo), var(--rojo));
+  color: var(--crema);
+  padding: 14px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--negro);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  background-color: var(--negro);
+  color: var(--crema);
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+}
+
+.brand h1 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--crema);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--crema);
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* WORKSPACE LAYOUT */
+.workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: calc(100vh - 60px);
+}
+
+@media (min-width: 850px) {
+  .workspace {
+    grid-template-columns: 380px 1fr;
+  }
+}
+
+/* PANEL LATERAL */
+.sidebar {
+  background-color: var(--bg-sidebar);
+  color: var(--negro);
+  border-right: 3px solid var(--negro);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.panel-header {
+  border-bottom: 3px solid var(--negro);
+  padding-bottom: 10px;
+}
+
+.panel-header h2 {
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--bordo);
+  letter-spacing: 0.05em;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-indicator {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: var(--rojo);
+  color: var(--crema);
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--negro);
+}
+
+.step-header h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--bordo);
+}
+
+/* GALERÍA DE PREVISUALIZACIÓN DE PLANTILLAS */
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.template-card {
+  background: none;
+  border: 2px solid var(--negro);
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  box-shadow: 2px 2px 0px var(--negro);
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.template-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0px var(--negro);
+}
+
+/* Plantilla seleccionada actualmente */
+.template-card.active {
+  border: 3px solid var(--rojo);
+  box-shadow: 0 0 0 2px var(--negro), 3px 3px 0px var(--rojo);
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--negro);
+  letter-spacing: 0.05em;
+}
+
+.field-group label small {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--rojo);
+  text-transform: none;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  background-color: var(--blanco);
+  border: 2px solid var(--negro);
+  border-radius: 6px;
+  color: var(--negro);
+  font-weight: 700;
+  outline: none;
+  transition: all 0.15s ease;
+  resize: none;
+  box-shadow: 2px 2px 0px var(--negro);
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: var(--rojo);
+  box-shadow: 3px 3px 0px var(--rojo);
+  transform: translateY(-1px);
+}
+
+/* PIE DE PANEL Y BOTÓN */
+.panel-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border: 3px solid var(--negro);
+  border-radius: 8px;
+  background-color: var(--rojo);
+  color: var(--crema);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 3px 3px 0px var(--negro);
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--bordo);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--negro);
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--negro);
+}
+
+.status {
+  font-size: 0.85rem;
+  color: var(--rojo);
+  text-align: center;
+  min-height: 1.2rem;
+  font-weight: 800;
+}
+
+/* MESA DE TRABAJO (CANVAS STAGE) */
+.canvas-stage {
+  background-color: #121214;
+  background-image: radial-gradient(#2e2e35 1px, transparent 1px);
+  background-size: 18px 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.stage-header {
+  margin-bottom: 12px;
+}
+
+.stage-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #a1a1aa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: #27272a;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid #3f3f46;
+}
+
+.poster-wrapper {
+  max-height: 78vh;
+  aspect-ratio: 9 / 16;
+  border: 3px solid var(--negro);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-wrapper canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
