@@ -3,12 +3,12 @@ const HEIGHT = 1920;
 
 // Mapa de colores según la plantilla seleccionada
 const TEMPLATE_COLORS = {
-  'plantilla1.png': '#720404',   // Bordó
-  'plantilla2.png': '#720404',   // Bordó
-  'plantilla3.png': '#720404',   // Bordó
-  'plantilla1v2.png': '#FFFFFF', // Blanco
-  'plantilla2v2.png': '#FFFFFF', // Blanco
-  'plantilla3v2.png': '#5E17EC'  // Violeta
+  'Plantilla1.png': '#720404',   // Bordó
+  'Plantilla2.png': '#720404',   // Bordó
+  'Plantilla3.png': '#720404',   // Bordó
+  'Plantilla1v2.png': '#FFFFFF', // Blanco
+  'Plantilla2v2.png': '#FFFFFF', // Blanco
+  'Plantilla3v2.png': '#5E17EC'  // Violeta
 };
 
 const TEXT_CONFIG = {
@@ -21,7 +21,7 @@ const TEXT_CONFIG = {
 };
 
 // Guardar la plantilla activa actual
-let currentTemplatePath = 'assets/plantilla1.png';
+let currentTemplatePath = 'assets/Plantilla1.png';
 
 // Elementos DOM
 const templateCards = document.querySelectorAll('.template-card');
