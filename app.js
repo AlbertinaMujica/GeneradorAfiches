@@ -112,7 +112,7 @@ async function renderPoster() {
     context.drawImage(bgImage, 0, 0, WIDTH, HEIGHT);
 
     // 2. Renderizar Texto con el color configurado
-    const titleText = inputTitle.value.trim() || 'VIENE MYRIAM BREGMAN';
+    const titleText = inputTitle.value.trim() || 'Tu texto aquí';
     const fitted = fittedText(context, titleText, TEXT_CONFIG.maxWidth, TEXT_CONFIG.maxHeight, TEXT_CONFIG.fontFamily);
 
     context.font = `900 ${fitted.size}px ${TEXT_CONFIG.fontFamily}`;
